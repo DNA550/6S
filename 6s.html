@@ -11,161 +11,78 @@
 <script>
 
 
-// Вызвать alert
+// Тема: 2.9 Операторы сравнения
 
-alert("Я JavaScript!"); 
-//
-
-
-// variables
-
-let stalker = ''
-let name = 'Артём'
-stalker = name;
-alert (stalker)
-
-
-// Constants
-const username = "Артём";
-username = "Bob";   // ошибка, username - константа, поэтому мы не можем изменить ее значение
-alert (username)
-//
-
-
-// Data types Number
-
-const x = 45;
-const y = 123.897;
-const z = -0.123;
-
-//
-
-
-// Data  BigInt
-
-const num = 9223372036854775801n;
-console.log(num);   // 9223372036854775801n
-
-//
-
-
-// Strings
-
-const user = "Артём";
-const company = 'GTD.MARKET';
-const language = `JavaScript`;
-
-console.log(user);
-console.log(company);
-console.log(language);
-
-//
-
-
-//   Interpolation
-
-const user = "Артём";
-const age = 37;
-const isMarried = false;
-const text = `Name: ${user}   Age: ${age}   IsMarried: ${isMarried}`;
-console.log(text);  // Name: Артём   Age: 37   IsMarried: false
-
-
-// null
-
-email = null;
-console.log(email);     // null
-//
-
-// undefined
-
-let email;
-console.log(email); // undefined
-
-//
-
-
-// object
-const user = {name: "Артём", age:42};
-console.log(user.name);
-console.log(user.age);
-
-//
-
-
-//  typeof operator
-let id;
-console.log(typeof id);       // undefined
-
-id = 45;
-console.log(typeof id);   // number
-
-id = 45n;
-console.log(typeof id);     // bigint
-
-id = "45";
-console.log(typeof id);     // string
-//
-
-
-//  confirm
-
-let isBoss = confirm("Ты здесь главный ментор по JS?");
-alert( isBoss ); 
-
-//
-
-
-//  prompt
-
-let name = prompt("Ваше позиция в структуре S6?", "");
-alert(name);
-
-//
-
-
-// String conversion
-
-const number1 = "56";
-const number2 = 4;
-cont result = number1 + number2;
-console.log(result); // 564
-
-// parseInt
-
-
-const number1 = "56";
-const number2 = 4;
-const result = parseInt(number1) + number2;
-console.log(result); // 60
 
 
 //
 
+let result = 550>130
+console.log(result) // true
+
+//
+
+
+
+// 
+
+let result = 'Автомобиль Победа'=='Автомобиль победа'
+console.log(result)  // false
+//
+
+
+//
+
+let result = 'Водка по 3 рубля'<'пиво по 5 рублей'
+console.log(result) // true
+
+//
+
+
+//
+
+let result = 'Водка по 3 рубля за 0,5'<'пиво по 5 рублей за 0,5'
+console.log(result) // true
+
+//
+
+
+//
+let result = 'Водка Московская по 3 рубля за 0,5 л'=='Водка Московская по 3 рубля за 500 мл'
+console.log(result) // false   "А мне студентов навязали, практикантов. Учу вот!"
+
+//
+
+
+// Сравнение разных типов
+let a = Раки по 5 рублей
+let b = 'Раки по 5 рублей'
+let c = (a==b)
+console.log(c) // false  
+
+//
 
 
 //  
-alert( Boolean(1) ); // true
-alert( Boolean(0) ); // false
 
-alert( Boolean("Привет главный по JS!") ); // true
+
+alert( Boolean("JS-сила?") ); // true
 alert( Boolean("") ); // false
 
 //
 
-// Строгое равенство (===)
-const x = 100;
-const y = 100;  
-console.log(x === y ); // true
 
-// 
-
-// Строгое равенство (===)
-const x = 100; // number (число)
-const y = '100'; // string (строка)
-
-console.log(x === y ); // false  
+// Оператор двойного равенства (==)
+let a = 0
+let b = ''
+let c = (a==b)
+console.log(c) // true
 //
+
+let a = 0
+let b = ''
+let c = (a!==b)
+console.log(c) // true
 
 // Оператор двойного равенства (==)
 const x = 100; // number
@@ -209,6 +126,154 @@ const y = 50;
 
 console.log(x >= y); // false 
 //
+
+
+
+// Строгое равенство (===)
+const x = 100;
+const y = 100;  
+console.log(x === y ); // true
+
+// 
+
+// Строгое равенство (===)
+const x = 100; // number (число)
+const y = '100'; // string (строка)
+console.log(x === y ); // false  
+//
+
+
+// Тема: 2.10  Условное ветвение: if
+
+let S6 = prompt('Привет, ты сдесь главный по JS?')
+if(S6 == 'да'){
+    alert ("+10 к карме!")
+}else{
+    alert ("-Ну, ты, это... С… Спасибо! ТЫ, заходи если ЧТО...")
+}
+
+//
+
+
+
+//
+let student = prompt('В каком году я выучу JS и стану программистом?', '');
+
+if (student <= 2024) {
+  alert( 'Нет, ещё рано...' );
+} else if (student == 2025) {
+  alert( 'Пока рано..... - Решай задачи!' );
+} else if (student > 2026) {
+  alert( 'Уже поздно! - Изучай TypeScript!' );
+}else{
+  alert( 'Займись уже чем-нибудь полезным!' );
+}
+
+
+
+//
+let onboarding;
+let age = prompt('Какой у вас обыт работы в JS?', '');
+
+if (age > 2) {
+    onboarding = 'Приглашаем Вас на собеседование';
+} else {
+    onboarding = 'Пока рано..... - Решай задачи!';
+}
+
+alert(onboarding);
+
+//
+
+//
+let onboarding;
+let experienceInJs = prompt('Какой у вас обыт работы в JS?', '');
+
+if (experienceInJs > 2) {
+    onboarding = 'Приглашаем Вас на собеседование';
+} else {
+    onboarding = 'Пока рано..... - Изучай Learn JS!';
+}
+
+alert(onboarding);
+
+//
+
+
+//
+let experienceInJs = prompt('Какой у вас обыт работы в JS?', 2);
+
+let status = (experienceInJs < 3) ? 'Ты - младший !':
+ (experienceInJs > 4) ? 'Ты - средний!' :
+ 'Х/З какой у тебя опыт!';
+
+console.log( status );
+
+//
+
+
+
+//Логические операторы
+
+let  experienceInJs = 2;
+let  junior = true;
+
+if(experienceInJs < 3 || experienceInJs > 1 ){
+    console.log(junior)   // true
+}
+
+//
+
+
+
+//
+let junior = "";
+let middle = '';
+let senior = 6;
+
+console.log (junior || middle || senior)
+
+let status =  senior;
+if(status == 6){
+    alert(`You are a senior with at least ${senior} years of work experience`)
+}
+
+//
+let status = "";
+let junior = 2;
+let middle = 4;
+let senior = 6;
+status = junior||(senior - junior)
+console.log(status)
+
+
+if(status == 4){
+    alert(`You're a ${middle} developer`)
+}else{
+  alert("х/з что за программист =))")
+}
+
+//
+
+
+
+
+//
+let status;
+let junior = 0;
+let middle = 4;
+let senior = 6;
+
+
+statusStudent =  (middle && senior)
+console.log(status)
+
+if(senior == statusStudent){
+    alert("Нанять сотрудника!")
+}
+
+//
+
 
 
 
