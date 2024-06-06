@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+// 2. 13 Цикл «while»
+
+i=1;
+while (i<2){
+  alert('Привет програмист!')
+  i++
+}
+
+
+// 2. 13 Цикл «do…while»
+
+let i = 0;
+do {
+  alert(` ${i} Решай задачки по JS за галочки !!!`);
+  i++;
+} while (i < 2);
+
+//  Цикл  «while», «break»
+
+let sum = 0;
+while (true) {
+  let value = +prompt("Сколько прошло минут от начала занятия?", '');
+  if (!value) break; // (*)
+  sum += value;1
+}
+alert( 'С начала занятий прошло: ' + sum 
+     + ` минут(ы)`);
+
+//
+
+
+
+
+
+
+// Прерывание цикла: «break»
+
+while(true){
+	var result = prompt('Команда S6 остановит выполнение программы', '');
+	if(result == 'S6'){
+		alert('Вы остановили выполнение программы');
+		break;	
+	}
+	alert('Вы ввели строку ' + result);
+}
+
+//
+
+
+
+
+//  Переход к следующей итерации: continue
+
+for (let i = 0; i < 5; i++) {
+  if (i === 2) continue;
+  alert(i);
+}
+
+//
+
+
+// Метки для break
+for (let n = 0; n < 8; n++) {
+        if (n === 5) break;
+    }
+    alert(n);
+
+
+//
+
+
+
+// Метки для continue
+for (let n = 0; n < 8; n++) {
+        if (n === 3) continue;
+    }
+    alert(n);
+
+
+//
+
+
+
+
+
+
+
+// Конструкция "switch"
+let a = 3 + 3;
+
+switch (a) {
+  case 4:
+    alert( 'Маловато галочек' );
+    break;
+  case 5:
+    alert( 'Поставь галочку!!!' );
+    break;
+  case 6:
+    alert( 'QA with 6S' );
+    break;
+  default:
+    alert( "Что за галочки?" );
+}
+
+//
+
+
+// Конструкция "switch"
+
+let arg = prompt("Сколько менторов в 6S?");
+switch (arg) {
+  case '0':
+  case '6':
+    alert( 'Да, 6 специалистов!' );
+    break;
+
+  case '2':
+    alert( 'Два' );
+    break;
+
+  case 3:
+    alert( 'Иди узнай!' );
+    break;
+  default:
+    alert( 'Опять мимо!' );
+}
+
+
+
+//  Функции. Локальные переменные.
+
+function X6S() {
+  let study = "Привет! Приходи учиться в 6S!"
+  alert (study)
+}
+
+X6S();
+
+// Функции. Внешние переменные.
+let newSinior = 'Вася'
+
+function X7S(){
+ let study = 'В нашей команде пополнение ! К нам добавлен ' + newSinior;
+ alert(study);
+}
+
+X7S();
+
+// Функции. Доступ к внешним переменным (глобальным).
+
+let lastSinior = 'Вася'
+let workPlace = 'Тиньков банк'
+
+function X7S(){
+  lastSinior = 'Тиньков Николай!'
+ let study = 'В нашей команде пополнение ! К нам добавлен ' + lastSinior;
+ let work = 'Предыдущее место работы - ' + workPlace;
+
+ let workAndStudy = study + work
+ alert(workAndStudy);
+}
+
+X7S();
+//
+
+
+
+// Функции. Параметры.
+function HowTolearnJS (study, practice){
+  alert(study+', '+practice);
+}
+
+HowTolearnJS('изучение', 'практика');
+
+//
+
+
+
+// Функции. Значения по умолчанию.
+
+function HowToGetNewJob(pointOne, pointTwo, pointThree = "ходить на собеседования!"){
+  pointTwo = "изучать learn JS"
+  alert(pointOne + pointTwo + ', ' + pointThree);
+
+}
+HowToGetNewJob('Луший способ получить работу в программировании - ');
+
+//
+
+
+
+// Функции. Вычесление параметров по умолчанию.
+
+function howDoIRecognizeMyselfAsAFrontender(text) {
+  
+  if (text === undefined) { 
+    text = 'оцениваешь кнопачки на сайте  =))';
+  }else{
+    text = 'Ты же - фронтендер!!! - сделал заключение мой брат.'
+  }
+  alert(text);
+}
+howDoIRecognizeMyselfAsAFrontender('Ты же - фронтендер!'); 
+
+//
+
+
+// Функции. Возврат значения.
+
+function  WhatIsYourExperienceInTheFrontend(text1,text2){
+    return (text1 + ',' + text2);
+ }
+
+  experience = WhatIsYourExperienceInTheFrontend('worked in 2 companies', ' created 3 websites')
+  alert(experience);
+
+//
+
+
+
+// Функции. Возврат значения.
+
+function checkPoints(points) {
+  if (points <= 3) {
+    return false;
+  } else {
+    return confirm('- Ты наш, иди работай, о-О Фронтендер!!!');
+  }
+}
+
+let points = prompt('Сколько у тебя галочек за спринт?', 2);
+
+if ( checkPoints(points) ) {
+  alert( 'Доступ в IT сферу тебе открыт!!!' );
+} else {
+  alert( 'Доступ к 6S - закрыт!!! - Давай до-сви-данья!!!' );
+}
+
+//
+
+
+// Function Expression.
+
+//
+
+
+
+
+    </script>
+
+
+</body>
+</html>

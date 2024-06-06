@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+// 2. 13 Цикл «while»
+
+i=1;
+while (i<2){
+  alert('Привет програмист!')
+  i++
+}
+
+
+// 2. 13 Цикл «do…while»
+
+let i = 0;
+do {
+  alert(` ${i} Решай задачки по JS за галочки !!!`);
+  i++;
+} while (i < 2);
+
+//  Цикл  «while», «break»
+
+let sum = 0;
+while (true) {
+  let value = +prompt("Сколько прошло минут от начала занятия?", '');
+  if (!value) break; // (*)
+  sum += value;1
+}
+alert( 'С начала занятий прошло: ' + sum 
+     + ` минут(ы)`);
+
+
+
+//
+    </script>
+
+
+</body>
+</html>
